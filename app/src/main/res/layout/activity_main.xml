@@ -20,7 +20,68 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/margin_medium_2"
+        android:paddingStart="@dimen/margin_medium_2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/tv_greeting_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Welcome to my home !"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/margin_medium_3" />
+
+        <ImageView
+            android:id="@+id/iv_greeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_greeting_msg"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/home" />
+
+        <EditText
+            android:id="@+id/et_user_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_greeting_msg"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:hint="Enter your phone number" />
+
+        <EditText
+            android:id="@+id/et_user_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_user_phone"
+            android:hint="Enter your password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/et_user_phone"
+            android:layout_below="@id/et_user_password"
+            android:text="Login"
+            />
+
+        <TextView
+            android:id="@+id/btn_register_new_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/btn_login"
+            android:layout_below="@id/btn_login"
+            android:padding="@dimen/margin_medium"
+            android:text="Register New Account"
+            android:textColor="@color/primary"
+            android:foreground="@drawable/ripple"
+            />
+
+    </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
